@@ -1,6 +1,8 @@
 
+import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -23,6 +25,22 @@ public final class XMLTools {
         } finally {
             // fermeture de l'encodeur
             encoder.close();
+            
         }
     }
+    
+    public static void decodeToObject(String fileName, ListeRDV listeRDV) throws FileNotFoundException, IOException {
+        // ouverture de l'encodeur vers le fichier
+    	XMLDecoder decoder = new XMLDecoder(new FileInputStream(fileName));
+        try {
+            	listeRDV =(ListeRDV) decoder.readObject();
+        	
+        } finally {
+            // fermeture de l'encodeur
+        	decoder.close();
+            
+        }
+    }
+    
+
 }

@@ -77,11 +77,21 @@ public class RendezVous implements java.io.Serializable {
 
  public static void main(String[] args) {
         try {
+        	ListeRDV laListe = new ListeRDV();
+        	
             RendezVous rdv1 = new RendezVous("12/12/12", "15:30", "15:45", "Dr.Lulu", "Mr.Louis", "TB");
-            XMLTools.encodeToFile(rdv1, "user.xml");
+            laListe.add(rdv1);
             
-            RendezVous rdv2 = new RendezVous("11/11/11", "17:30", "17:45", "Dr.Lulu", "Mr.Louis", "TB");
-            XMLTools.encodeToFile(rdv2, "user.xml");
+            XMLTools.encodeToFile(laListe, "rdv.xml");
+            
+            
+            
+            XMLTools.decodeToObject("rdv.xml", laListe);
+
+            RendezVous rdv2 = new RendezVous("11/11/11", "17:30", "17:45", "Dr.Lulu", "Mr.Louis", "TB");  
+            laListe.add(rdv2);
+            XMLTools.encodeToFile(laListe, "rdv.xml");
+            
         } catch(Exception e) {
             e.printStackTrace();
         }

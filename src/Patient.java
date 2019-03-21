@@ -1,7 +1,5 @@
 /**
  * Classe qui définit un patient
- * 
- * 
  * @author paulj
  *
  */

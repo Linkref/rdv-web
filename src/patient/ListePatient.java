@@ -1,6 +1,6 @@
 package patient;
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Classe qui définit une liste de Patient
@@ -13,10 +13,10 @@ public class ListePatient {
 /**
  * Liste des Patient
  */
-	private List<Patient> ListePatient;
+	private ArrayList<Patient> ListePatient;
 
 public ListePatient() {
-	super();
+
 	ListePatient = new ArrayList<Patient>();
 }
 
@@ -24,7 +24,7 @@ public ListePatient() {
  * Retourne la liste des rendez-vous
  * @return La liste des rendez-vous
  */
-	public List<Patient> getListePatient() {
+	public ArrayList<Patient> getListePatient() {
 		return ListePatient;
 	}
 
@@ -32,7 +32,7 @@ public ListePatient() {
  * Modifie la liste de rendez-vous
  * @param listeRDV: la nouvelle liste
  */
-	public void setListePatient(List<Patient> ListePatient) {
+	public void setListePatient(ArrayList<Patient> ListePatient) {
 		this.ListePatient = ListePatient;
 	}
 

@@ -1,6 +1,6 @@
 package rdv;
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Classe qui définit une liste de rendez-vous
@@ -13,7 +13,7 @@ public class ListeRDV {
 /**
  * Liste des rendez-vous
  */
-	private List<RendezVous> listeRDV;
+	private ArrayList<RendezVous> listeRDV;
 
 	
 /**
@@ -30,7 +30,7 @@ public class ListeRDV {
  * Retourne la liste des rendez-vous
  * @return La liste des rendez-vous
  */
-	public List<RendezVous> getListeRDV() {
+	public ArrayList<RendezVous> getListeRDV() {
 		return listeRDV;
 	}
 
@@ -38,7 +38,7 @@ public class ListeRDV {
  * Modifie la liste de rendez-vous
  * @param listeRDV
  */
-	public void setListeRDV(List<RendezVous> listeRDV) {
+	public void setListeRDV(ArrayList<RendezVous> listeRDV) {
 		this.listeRDV = listeRDV;
 	}
 

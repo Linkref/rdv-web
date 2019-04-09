@@ -136,7 +136,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <form class="form-horizontal">
+                  <form class="form-horizontal" action="RdvServlet" method="post">
                     <fieldset>
 
 
@@ -149,12 +149,18 @@
                         <label class="col-md-12 control-label" for="selectSpe">Spécialité</label>
                         <div class="col-md-8">
                           <select id="selectSpe" name="selectSpe" class="form-control">
-                            <option value="generaliste">Généraliste</option>
-                            <option value="ophtalmo">Ophtalmologie</option>
-                            <option value="dermato">Dermatologie</option>
-                            <option value="gyneco">Gynécologie</option>
-                            <option value="urolo">Urologie</option>
-                            <option value="pediatrie">Pédiatrie</option>
+                          
+							  <!-- On recupère un objet listeMedecin puis la liste des specialités pour remplir les options du select -->
+							<jsp:useBean id="medecins"  scope="request" class="medecin.ListeMedecin"/>
+							<%@ page import="java.util.ArrayList"  %>
+							<%	
+									ArrayList<String> listeSpe = medecins.getListSpecialite();
+					 			   for(int i=0; i<listeSpe.size();i++)
+					 			   {
+					 				   out.println("<option>"+listeSpe.get(i)+"</option>");
+					 			   }
+					 		%>
+                      
                           </select>
                         </div>
                       </div>
@@ -163,38 +169,55 @@
                           <label class="col-md-12 control-label" for="selectMed">Médecin</label>
                           <div class="col-md-8">
                             <select id="selectMed" name="selectMed" class="form-control">
-                              <option value="Michel Dupont">Michel Dupont</option>
-                              <option value="Stéphane Pouyou">Stéphane Pouyou</option>
-                              <option value="Alexandre Bizanti">Alexandre Bizantin</option>
+                            
+  								<!-- On remplit les options du select avec l'objet ListeMedecin -->
+					 		   <%		
+					 			   for(int i=0; i<medecins.size();i++)
+					 			   {
+					 				   out.println("<option>"+medecins.get(i).toString()+"</option>");
+					 			   }
+					 			%>
                             </select>
                           </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group col-md-6">
-                          <label class="col-md-12 control-label" for="nom">Nom</label>
+                          <label class="col-md-12 control-label" for="patient">Patient</label>
                           <div class="col-md-8">
-                            <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md" required="">
+                           <select id="selectPat" name="selectPat" class="form-control">
+                           
+                           	  <!-- On recupère un objet listePatient pour remplir les options du select -->
+                               <jsp:useBean id="patients"  scope="request" class="patient.ListePatient"/>
+					 		   <%		
+					 			   for(int i=0; i<patients.size();i++)
+					 			   {
+					 				   out.println("<option>"+patients.get(i).toString()+"</option>");
+					 			   }
+					 			%>
+					 			
+                           </select>
                           </div>
                         </div>
 
 
                       <!-- Text input-->
-                      <div class="form-group col-md-6">
-                        <label class="col-md-12 control-label" for="prenom">Prénom</label>
+                        <div class="form-group col-md-6">
+                        <label class="col-md-12 control-label" for="RaisonRdv">Raison de la venue</label>
                         <div class="col-md-8">
-                          <input id="prenom" name="prenom" type="text" placeholder="Prénom" class="form-control input-md" required="">
+                          <input id="raisonrdv" name="raisonrdv" type="text" placeholder="Raison de la venue" class="form-control input-md" required="">
                         </div>
                       </div>
-
+  						 
 
                       <!-- Text input-->
-                      <div class="form-group col-md-6">
+                     <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="date">Date</label>
                         <div class="col-md-8">
                           <input id="date" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
                         </div>
                       </div>
+                    
 
                       <!-- Text input-->
                       <div class="form-group col-md-6">

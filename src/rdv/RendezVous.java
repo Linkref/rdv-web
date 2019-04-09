@@ -1,6 +1,9 @@
-public class RendezVous implements java.io.Serializable {
+package rdv;
 
-    private String date;
+public class RendezVous {
+
+    
+	private String date;
     private String heureDebut;
     private String heureFin;
     private String medecin;
@@ -75,25 +78,34 @@ public class RendezVous implements java.io.Serializable {
 
 
 
- public static void main(String[] args) {
+ /*public static void main(String[] args) {
         try {
         	ListeRDV laListe = new ListeRDV();
+        	ListeRDV laListe2=null;
         	
             RendezVous rdv1 = new RendezVous("12/12/12", "15:30", "15:45", "Dr.Lulu", "Mr.Louis", "TB");
-            laListe.add(rdv1);
-            
+            laListe.add(rdv1);          
             XMLTools.encodeToFile(laListe, "rdv.xml");
             
             
-            
-            XMLTools.decodeToObject("rdv.xml", laListe);
+            laListe2= (ListeRDV) XMLTools.decodeToObject("rdv.xml");
 
-            RendezVous rdv2 = new RendezVous("11/11/11", "17:30", "17:45", "Dr.Lulu", "Mr.Louis", "TB");  
-            laListe.add(rdv2);
-            XMLTools.encodeToFile(laListe, "rdv.xml");
+            RendezVous rdv2 = new RendezVous("11/11/11", "17:30", "17:45", "Dr.Lulu", "Mr.toto", "TB");  
+            laListe2.add(rdv2);
+            XMLTools.encodeToFile(laListe2, "rdv.xml");
+            
+            ListePatient patients= new ListePatient();
+        	
+        	Patient pat1 = new Patient("toto","tata");
+        	Patient pat2 = new Patient("titi","tete");
+        	patients.add(pat1);
+        	patients.add(pat2);        	
+            
+        	 XMLTools.encodeToFile(patients, "patient.xml");
+           
             
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

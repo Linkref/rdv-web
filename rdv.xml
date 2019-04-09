@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_202" class="java.beans.XMLDecoder">
+<java version="11.0.2" class="java.beans.XMLDecoder">
  <object class="ListeRDV" id="ListeRDV0">
   <void property="listeRDV">
    <void method="add">
@@ -39,7 +39,7 @@
       <string>Dr.Lulu</string>
      </void>
      <void property="patient">
-      <string>Mr.Louis</string>
+      <string>Mr.toto</string>
      </void>
      <void property="raisonVenue">
       <string>TB</string>

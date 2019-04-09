@@ -29,17 +29,13 @@ public final class XMLTools {
         }
     }
     
-    public static void decodeToObject(String fileName, ListeRDV listeRDV) throws FileNotFoundException, IOException {
+    public static Object decodeToObject(String fileName) throws FileNotFoundException, IOException {
         // ouverture de l'encodeur vers le fichier
     	XMLDecoder decoder = new XMLDecoder(new FileInputStream(fileName));
-        try {
-            	listeRDV =(ListeRDV) decoder.readObject();
-        	
-        } finally {
-            // fermeture de l'encodeur
-        	decoder.close();
-            
-        }
+    	 Object	object = null;
+        object = decoder.readObject();
+        decoder.close();
+        return object;
     }
     
 

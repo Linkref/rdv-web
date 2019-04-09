@@ -6,8 +6,9 @@
   </welcome-file-list>
   <servlet>
 	<servlet-name>RdvServlet</servlet-name>
-	<servlet-class>RdvServlet</servlet-class>
+	<servlet-class>priserdv.RdvServlet</servlet-class>
 </servlet>
+
 	<servlet-mapping>
 		<servlet-name>RdvServlet</servlet-name>
 		<url-pattern>/RdvServlet</url-pattern>

@@ -26,10 +26,8 @@
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                 <thead>
                                                 <tr>
-                                                    <th>Nom</th>
-                                                    <th>Prénom</th>
+                                                    <th>Patient</th>
                                                     <th>Date de rendez-vous</th>
-                                                    <th>Spécialité</th>
                                                     <th>Médecin</th>
                                                     <th>Motif</th>
                                                     <th>Supprimer</th>
@@ -48,11 +46,9 @@
 													   {
 														   out.println(
 																   "<tr>"
-														   			+"<td>"+rdv.getPatient().getNom()+"</td>"
-														   			+"<td>"+rdv.getPatient().getPrenom()+"</td>"
+														   			+"<td>"+rdv.getPatient()+"</td>"
 														   			+"<td>"+rdv.getDate()+ " à "+ rdv.getHeureDebut() +"</td>"
-														   		    +"<td>"+rdv.getMedecin().getSpecialite()+"</td>"
-														   		    +"<td>"+rdv.getMedecin().getNom()+ " " +rdv.getMedecin().getPrenom() +"</td>"
+														   		    +"<td>"+rdv.getMedecin()+"</td>"
 														   		    +"<td>"+rdv.getRaisonVenue()+"</td>"
 																    +"<td> <i class='fas fa-trash-alt'></i></td><tr>"
 																   

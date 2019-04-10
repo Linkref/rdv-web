@@ -1,18 +1,12 @@
 package rdv;
 
-import medecin.Medecin;
-import patient.Patient;
-
 public class RendezVous {
 
-    
 	private String date;
     private String heureDebut;
-   // private String heureFin;
-    private Medecin medecin;
-    private Patient patient;
+    private String medecin;
+    private String patient;
     private String raisonVenue; 
-
 
     public void setDate(String date) {
 		this.date = date;
@@ -22,15 +16,11 @@ public class RendezVous {
 		this.heureDebut = heureDebut;
 	}
 
-/*	public void setHeureFin(String heureFin) {
-		this.heureFin = heureFin;
-	}
-*/
-	public void setMedecin(Medecin medecin) {
+	public void setMedecin(String medecin) {
 		this.medecin = medecin;
 	}
 
-	public void setPatient(Patient patient) {
+	public void setPatient(String patient) {
 		this.patient = patient;
 	}
 
@@ -46,15 +36,12 @@ public class RendezVous {
 		return heureDebut;
 	}
 
-/*	public String getHeureFin() {
-		return heureFin;
-	}
-*/
-	public Medecin getMedecin() {
+	
+	public String getMedecin() {
 		return medecin;
 	}
 
-	public Patient getPatient() {
+	public String getPatient() {
 		return patient;
 	}
 
@@ -66,11 +53,9 @@ public class RendezVous {
 		
     }
 
-    public RendezVous(String date, String heureDebut, Medecin medecin, Patient patient, String raisonVenue){
-
+    public RendezVous(String date, String heureDebut, String medecin, String patient, String raisonVenue){
         this.date = date;
         this.heureDebut = heureDebut;
-   //     this.heureFin = heureFin;
         this.medecin = medecin;
         this.patient = patient;
         this.raisonVenue = raisonVenue;

@@ -18,74 +18,44 @@
 
                       <div class="row">
 
-
-
-                      <!-- Select Basic -->
-                      <div class="form-group col-md-6">
-                        <label class="col-md-12 control-label" for="selectSpe">Spécialité</label>
-                        <div class="col-md-8">
-                          <select id="selectSpe" name="selectSpe" class="form-control">
-                          
-							  <!-- On recupère un objet listeMedecin puis la liste des specialités pour remplir les options du select -->
-							<jsp:useBean id="medecins"  scope="request" class="medecin.ListeMedecin"/>
-							<%@ page import="java.util.ArrayList"  %>
-							<%	
-									ArrayList<String> listeSpe = medecins.getListSpecialite();
-					 			   for(int i=0; i<listeSpe.size();i++)
-					 			   {
-					 				   out.println("<option>"+listeSpe.get(i)+"</option>");
-					 			   }
-					 		%>
-                      
-                          </select>
-                        </div>
-                      </div>
-
                         <div class="form-group col-md-6">
                           <label class="col-md-12 control-label" for="selectMed">Médecin</label>
                           <div class="col-md-8">
                             <select id="selectMed" name="selectMed" class="form-control">
-                            
-  								<!-- On remplit les options du select avec l'objet ListeMedecin -->
-					 		   <%		
-					 			   for(int i=0; i<medecins.size();i++)
-					 			   {
-					 				   out.println("<option>"+medecins.get(i).toString()+"</option>");
-					 			   }
-					 			%>
+  								<option>Michel Cymes</option>
+								<option>Marco Polo</option>
+								<option>François Dupont</option>
+								<option>Albert Tuile</option>
+								<option>Serge Loupon</option>
                             </select>
                           </div>
                         </div>
-
+                        
                         <!-- Text input-->
-                        <div class="form-group col-md-6">
-                          <label class="col-md-12 control-label" for="patient">Patient</label>
-                          <div class="col-md-8">
-                           <select id="selectPat" name="selectPat" class="form-control">
-                           
-                           	  <!-- On recupère un objet listePatient pour remplir les options du select -->
-                               <jsp:useBean id="patients"  scope="request" class="patient.ListePatient"/>
-					 		   <%		
-					 			   for(int i=0; i<patients.size();i++)
-					 			   {
-					 				   out.println("<option>"+patients.get(i).toString()+"</option>");
-					 			   }
-					 			%>
-					 			
-                           </select>
-                          </div>
-                        </div>
-
-
-                      <!-- Text input-->
                         <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="RaisonRdv">Raison de la venue</label>
                         <div class="col-md-8">
-                          <input id="raisonrdv" name="raisonrdv" type="text" placeholder="Raison de la venue" class="form-control input-md" required="">
+                          <input id="raisonrdv" name="raisonrdv" type="text" placeholder="Raison de la venue" class="form-control input-md" required>
                         </div>
                       </div>
-  						 
 
+                        <!-- Text input-->
+                        <div class="form-group col-md-6">
+                          <label class="col-md-12 control-label" for="patient">Nom</label>
+                          <div class="col-md-8">
+						  <input id="patientNom" name="patientNom" type="text" placeholder="Nom" class="form-control input-md" required>
+                          </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group col-md-6">
+                          <label class="col-md-12 control-label" for="patient">Prénom</label>
+                          <div class="col-md-8">
+						  <input id="patientPrenom" name="patientPrenom" type="text" placeholder="Prénom" class="form-control input-md" required>
+                          </div>
+                        </div>
+
+  						 
                       <!-- Text input-->
                      <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="date">Date</label>

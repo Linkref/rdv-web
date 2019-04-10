@@ -1,6 +1,8 @@
 package priserdv;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,7 @@ import medecin.*;
 /**
  * Servlet implementation class RdvServlet
  */
-//@WebServlet("/RdvServlet")
+@WebServlet("/RdvServlet")
 public class RdvServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -38,7 +40,7 @@ public class RdvServlet extends HttpServlet {
 		ListeMedecin LM=getMedecin();
 		request.setAttribute( "medecins", LM );
 		
-		ListeRDV listeRdv=(ListeRDV) XMLTools.decodeToObject("rdv.xml");
+		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");
 		
 		if(listeRdv.getListeRDV().isEmpty()) //listeRdv.getListeRDV().get(0).getRaisonVenue()+
 		{System.out.println("coucou");}
@@ -51,7 +53,8 @@ public class RdvServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	       /* Récupération des champs du formulaire. */
+		
+	       /* Rï¿½cupï¿½ration des champs du formulaire. */
         String specialite = request.getParameter( "selectSpe" );
         String medecin = request.getParameter( "selectMed" );
         String patient = request.getParameter( "selectPat" );
@@ -62,23 +65,21 @@ public class RdvServlet extends HttpServlet {
 		String[] str= patient.split(" ");
 		Patient p = new Patient(str[0],str[1]);
 		
+		
 		str=medecin.split(" ");
 		Medecin m = new Medecin(str[0],str[1],specialite);
 		
-        RendezVous rdv = new RendezVous(date,heure,m, p,raison);
-        //ListeRDV listeRdv=null;
-        
-        ListeRDV listeRdv=(ListeRDV) XMLTools.decodeToObject("rdv.xml");
-        
+        RendezVous rdv = new RendezVous(date,heure,m,p,raison);
+
+        ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");    
         listeRdv.add(rdv);
         XMLTools.encodeToFile(listeRdv,"rdv.xml");
 		
-		this.doGet(request, response);
-		//this.getServletContext().getRequestDispatcher( "/WEB-INF/index.jsp" ).forward( request, response );
+        response.sendRedirect("listerdv?form=ok");
 	}
 	
 	/**
-	 * Initialise des données pour les patients et medecins
+	 * Initialise des donnï¿½es pour les patients et medecins
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 */
@@ -91,21 +92,20 @@ public class RdvServlet extends HttpServlet {
     	patients.add(pat2);  
     	
         ListeMedecin medecins= new ListeMedecin();
-    	Medecin med1 = new Medecin("Cymes","Michel","Généraliste");
-    	Medecin med2 = new Medecin("House","Gregory","Généraliste");
+    	Medecin med1 = new Medecin("Cymes","Michel","GÃ©nÃ©raliste");
+    	Medecin med2 = new Medecin("House","Gregory","GÃ©nÃ©raliste");
     	Medecin med3 = new Medecin("Polo","Marco","Cardiologue");
     	medecins.add(med1);
     	medecins.add(med2);
-    	medecins.add(med3);      
+    	medecins.add(med3);  
     	
-    	
-        
-    	 
-		XMLTools.encodeToFile(patients,"patient.xml");
-		XMLTools.encodeToFile(medecins,"medecin.xml");
-		
-		ListeRDV lr =new ListeRDV();
-		XMLTools.encodeToFile(lr,"rdv.xml");
+//    	ListeRDV l = new ListeRDV();
+//    	l.add(new RendezVous("12 Mars 2019","12:15",med1,pat1,"motif"));
+//    	XMLTools.encodeToFile(l,"./rdv.xml");
+
+		XMLTools.encodeToFile(patients,"./patient.xml");
+		XMLTools.encodeToFile(medecins,"./medecin.xml");
+
 
 	}
 	

@@ -4,13 +4,23 @@
   <welcome-file-list>
     <welcome-file>RdvServlet</welcome-file>
   </welcome-file-list>
+  
   <servlet>
-	<servlet-name>RdvServlet</servlet-name>
-	<servlet-class>priserdv.RdvServlet</servlet-class>
-</servlet>
-
-	<servlet-mapping>
-		<servlet-name>RdvServlet</servlet-name>
-		<url-pattern>/RdvServlet</url-pattern>
-	</servlet-mapping>
+    <servlet-name>RdvServlet</servlet-name>
+    <servlet-class>priserdv.RdvServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RdvServlet</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>ListeRdvServlet</servlet-name>
+    <servlet-class>priserdv.ListeRdvServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListeRdvServlet</servlet-name>
+    <url-pattern>/listerdv</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

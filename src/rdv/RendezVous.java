@@ -75,6 +75,7 @@ public class RendezVous {
         this.patient = patient;
         this.raisonVenue = raisonVenue;
     }  
+    
 
 
 

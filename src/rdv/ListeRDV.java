@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 
 /**
- * Classe qui définit une liste de rendez-vous
+ * Classe qui dï¿½finit une liste de rendez-vous
  * @author paulj
  *
  */
@@ -20,8 +20,6 @@ public class ListeRDV {
  * 	Initialise la liste
  */
 	public ListeRDV() {
-		
-		
 		listeRDV = new ArrayList<RendezVous>();
 	}
 
@@ -44,12 +42,19 @@ public class ListeRDV {
 
 
 /**
- * Ajoute un rendez-vous à la liste
+ * Ajoute un rendez-vous ï¿½ la liste
  * @param rdv: liste de rendez-vous
  */
 	public void add(RendezVous rdv)
 	{
 		this.listeRDV.add(rdv);
 	}
+	
+	public void afficher() {
+		 System.out.println("Boucle for");
+		  for(int i = 0 ; i < listeRDV.size(); i++)
+		   System.out.println(listeRDV.get(i));
+	}
+
 
 }

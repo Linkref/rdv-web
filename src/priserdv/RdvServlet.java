@@ -32,18 +32,22 @@ public class RdvServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		initData();
 		
-		ListePatient LP=getPatient();
-		request.setAttribute( "patients", LP );
+
+		if (!new File("rdv.xml").exists())
+			initData("rdv");
 		
-		ListeMedecin LM=getMedecin();
+		if (!new File("patient.xml").exists())
+			initData("patients");
+		
+		if (!new File("medecin.xml").exists())
+			initData("medecins");
+		
+		ListePatient LP= getPatient();
+		ListeMedecin LM= getMedecin();
+		
 		request.setAttribute( "medecins", LM );
-		
-		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");
-		
-		if(listeRdv.getListeRDV().isEmpty()) //listeRdv.getListeRDV().get(0).getRaisonVenue()+
-		{System.out.println("coucou");}
+		request.setAttribute( "patients", LP );
 		
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/index.jsp" ).forward( request, response );
 	}
@@ -79,11 +83,11 @@ public class RdvServlet extends HttpServlet {
 	}
 	
 	/**
-	 * Initialise des donn�es pour les patients et medecins
+	 * Initialise des données pour les patients, les médecins et les rdv
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 */
-	private void  initData() throws FileNotFoundException, IOException {
+	private void  initData(String param) throws FileNotFoundException, IOException {
 		
         ListePatient patients= new ListePatient();
     	Patient pat1 = new Patient("Dupont","Jean");
@@ -99,12 +103,20 @@ public class RdvServlet extends HttpServlet {
     	medecins.add(med2);
     	medecins.add(med3);  
     	
-//    	ListeRDV l = new ListeRDV();
-//    	l.add(new RendezVous("12 Mars 2019","12:15",med1,pat1,"motif"));
-//    	XMLTools.encodeToFile(l,"./rdv.xml");
+    	ListeRDV l = new ListeRDV();
+    	l.add(new RendezVous("12 Mars 2019","12:15",med1,pat1,"Maladie Pulmonaire"));
+		
+		if (param == "medecins")
+			XMLTools.encodeToFile(medecins,"./medecin.xml");
+		else if (param == "patients")
+			XMLTools.encodeToFile(patients,"./patient.xml");
+		else if (param == "rdv") 
+	    	XMLTools.encodeToFile(l,"./rdv.xml");
+		else 
+			System.out.println("Error");
 
-		XMLTools.encodeToFile(patients,"./patient.xml");
-		XMLTools.encodeToFile(medecins,"./medecin.xml");
+
+
 
 
 	}

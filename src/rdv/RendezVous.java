@@ -1,5 +1,9 @@
 package rdv;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class RendezVous {
 
 	private String date;
@@ -75,4 +79,7 @@ public class RendezVous {
 		return medecin.equals(rdv.medecin) && heureDebut.equals(rdv.heureDebut) && date.equals(rdv.date); 
     	
     }
+    
+
+    
 }

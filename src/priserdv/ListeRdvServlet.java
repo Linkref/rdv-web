@@ -28,8 +28,11 @@ public class ListeRdvServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+			
+		
+		
+		
 			ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");    
-			listeRdv.afficher();
 			request.setAttribute( "listeRdv", listeRdv );
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/tableau.jsp" ).forward( request, response );
 	}

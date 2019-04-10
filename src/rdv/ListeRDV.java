@@ -1,5 +1,9 @@
 package rdv;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -56,5 +60,42 @@ public class ListeRDV {
 		   System.out.println(listeRDV.get(i));
 	}
 
+    public int compterRdv(String param) throws ParseException {
+    	
+    	int cpt = 0;
+
+        Date date = new Date();
+        DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        String today = formatter.format(date);
+        
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyy");
+        Date date2 = sdf.parse(today);
+        
+        
+        for(RendezVous rdv : this.listeRDV) {
+        	
+            
+            if (param == "ajd") {
+            	if (sdf.parse(rdv.getDate().toString()).compareTo(date2) == 0) {
+                    cpt++;
+                }
+            }
+            if (param == "passe") {
+            	if (sdf.parse(rdv.getDate().toString()).compareTo(date2) < 0) {
+                    cpt++;
+                }
+            }
+            if (param == "futur") {
+            	if (sdf.parse(rdv.getDate().toString()).compareTo(date2) > 0) {
+                    cpt++;
+                }
+            }
+            
+        }
+
+
+        return cpt;
+    }
 
 }

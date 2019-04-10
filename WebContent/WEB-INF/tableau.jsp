@@ -49,7 +49,7 @@
 														   			+"<td>"+rdv.getDate()+ " à "+ rdv.getHeureDebut() +"</td>"
 														   		    +"<td>"+rdv.getMedecin()+"</td>"
 														   		    +"<td>"+rdv.getRaisonVenue()+"</td>"
-																    +"<td> <i class='fas fa-trash-alt'></i></td><tr>"
+																    +"<td><i class='fas fa-trash-alt'></i></td><tr>"
 																   
 																   );
 													   }

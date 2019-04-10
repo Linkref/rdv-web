@@ -39,7 +39,8 @@ public class RdvServlet extends HttpServlet {
 			XMLTools.encodeToFile(l,"./rdv.xml");
 		}
 	    	
-		
+		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");    
+		request.setAttribute( "listeRdv", listeRdv );
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/index.jsp" ).forward( request, response );
 	}
 

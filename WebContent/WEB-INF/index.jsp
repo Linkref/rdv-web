@@ -8,11 +8,14 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">PRISE DE RENDEZ-VOUS</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">PRISE DE RENDEZ-VOUS  <% if (request.getParameter("form") != null) {
+                                    	out.println("<span class='badge badge-pill badge-danger'>Médecin non disponible durant ce chréno</span>");
+                                    }
+                                    %></h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <form class="form-horizontal" action="index" method="post">
+                  <form class="form-horizontal" action="index" method="post" id="formRdv">
                     <fieldset>
 
 
@@ -60,7 +63,7 @@
                      <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="date">Date</label>
                         <div class="col-md-8">
-                          <input id="date" name="date" type="text" placeholder="Date" class="form-control input-md" required="">
+                          <input id="date" name="date" type="text" placeholder="Date" class="form-control input-md" required autocomplete="off">
                         </div>
                       </div>
                     
@@ -69,12 +72,26 @@
                       <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="dob">Heure</label>
                         <div class="col-md-8">
-                          <input id="Heure" name="Heure" type="text" placeholder="Heure" class="form-control input-md" required="">
-                        </div>
+                            <select id="heure" name="heure" class="form-control">
+								<%														
+								for(int i = 9; i <= 19; i++) {
+									out.println("<option>"+ i +"H</option>");
+								}
+								%>
+                            </select>                       
+                         </div>
                       </div>
 
 
                       </div>
+                      
+                      
+                      <div>
+                      
+                      </div>
+                      
+                      
+                      
 
                       <!-- Button -->
                       <div class="form-group">
@@ -93,6 +110,8 @@
 
         </div>
         <!-- /.container-fluid -->
+        
+         
         
         <jsp:include page="footer.jsp">
                     <jsp:param name="" value=""/>

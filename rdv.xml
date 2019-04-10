@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.1" class="java.beans.XMLDecoder">
+ <object class="rdv.ListeRDV" id="ListeRDV0">
+  <void property="listeRDV">
+   <void method="add">
+    <object class="rdv.RendezVous">
+     <void property="date">
+      <string>15/03/19</string>
+     </void>
+     <void property="heureDebut">
+      <string>15:00</string>
+     </void>
+     <void property="medecin">
+      <string>Michel Cymes</string>
+     </void>
+     <void property="patient">
+      <string>Paul Jaquit</string>
+     </void>
+     <void property="raisonVenue">
+      <string>Pneumonie</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="rdv.RendezVous">
+     <void property="date">
+      <string>15/03/19</string>
+     </void>
+     <void property="heureDebut">
+      <string>14:00</string>
+     </void>
+     <void property="medecin">
+      <string>Michel Cymes</string>
+     </void>
+     <void property="patient">
+      <string>Labat Anthony</string>
+     </void>
+     <void property="raisonVenue">
+      <string>Maladie</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="rdv.RendezVous">
+     <void property="date">
+      <string>04/24/2019</string>
+     </void>
+     <void property="heureDebut">
+      <string>15:00</string>
+     </void>
+     <void property="medecin">
+      <string>Michel Cymes</string>
+     </void>
+     <void property="patient">
+      <string>Labat Anthony</string>
+     </void>
+     <void property="raisonVenue">
+      <string>TestMaladie</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="rdv.RendezVous">
+     <void property="date">
+      <string>05/04/2019</string>
+     </void>
+     <void property="heureDebut">
+      <string>15:00</string>
+     </void>
+     <void property="medecin">
+      <string>Michel Cymes</string>
+     </void>
+     <void property="patient">
+      <string>Labat Anthony</string>
+     </void>
+     <void property="raisonVenue">
+      <string>Maladie</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="rdv.RendezVous">
+     <void property="date">
+      <string>15/03/19</string>
+     </void>
+     <void property="heureDebut">
+      <string>15</string>
+     </void>
+     <void property="medecin">
+      <string>Michel Cymes</string>
+     </void>
+     <void property="patient">
+      <string>Paul Jaquit</string>
+     </void>
+     <void property="raisonVenue">
+      <string>Pneumonie</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

@@ -35,7 +35,7 @@ public class RdvServlet extends HttpServlet {
 
 		if (!new File("rdv.xml").exists()) {
 	    	ListeRDV l = new ListeRDV();
-	    	l.add(new RendezVous("15/03/19","15:00","Michel Cymes","Paul Jaquit","Pneumonie"));
+	    	l.add(new RendezVous("15-03-19","15","Michel Cymes","Paul Jaquit","Pneumonie"));
 			XMLTools.encodeToFile(l,"./rdv.xml");
 		}
 	    	
@@ -55,15 +55,25 @@ public class RdvServlet extends HttpServlet {
         String patientPrenom = request.getParameter( "patientPrenom" );
         String raison = request.getParameter( "raisonrdv" );
         String date = request.getParameter( "date" );
-        String heure = request.getParameter( "Heure" );
-        		
+        String heure = request.getParameter( "heure" );
+        
+        
+        
         RendezVous rdv = new RendezVous(date,heure,medecin,patientNom+" "+patientPrenom,raison);
 
-        ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");    
-        listeRdv.add(rdv);
-        XMLTools.encodeToFile(listeRdv,"rdv.xml");
-		
-        response.sendRedirect("listerdv?form=ok");
+        ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml"); 
+        
+        if (listeRdv.getListeRDV().contains(rdv)) {
+        	
+        	response.sendRedirect("index?form=ko");
+        	
+        } else {        
+        	
+	        listeRdv.add(rdv);   
+	        XMLTools.encodeToFile(listeRdv,"rdv.xml");
+	        response.sendRedirect("listerdv?form=ok");
+	        
+        }
 	}
 	
 

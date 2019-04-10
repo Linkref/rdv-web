@@ -14,8 +14,7 @@
                                     <% if (request.getParameter("form") != null) {
                                     	out.println("<span class='badge badge-pill badge-success'>Rendez-vous ajouté avec succès</span>");
                                     }
-                                    	
-                                    	%>
+                                    %>
                                     
                                     </h6>
                                 </div>

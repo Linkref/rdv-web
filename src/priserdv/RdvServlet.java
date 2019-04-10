@@ -33,15 +33,7 @@ public class RdvServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-
-		if (!new File("rdv.xml").exists())
-			initData("rdv");
-		
-		if (!new File("patient.xml").exists())
-			initData("patients");
-		
-		if (!new File("medecin.xml").exists())
-			initData("medecins");
+		initData();
 		
 		ListePatient LP= getPatient();
 		ListeMedecin LM= getMedecin();
@@ -87,7 +79,7 @@ public class RdvServlet extends HttpServlet {
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 */
-	private void  initData(String param) throws FileNotFoundException, IOException {
+	private void  initData() throws FileNotFoundException, IOException {
 		
         ListePatient patients= new ListePatient();
     	Patient pat1 = new Patient("Dupont","Jean");
@@ -106,14 +98,13 @@ public class RdvServlet extends HttpServlet {
     	ListeRDV l = new ListeRDV();
     	l.add(new RendezVous("12 Mars 2019","12:15",med1,pat1,"Maladie Pulmonaire"));
 		
-		if (param == "medecins")
+		if (!new File("medecin.xml").exists())
 			XMLTools.encodeToFile(medecins,"./medecin.xml");
-		else if (param == "patients")
+		if (!new File("patient.xml").exists())
 			XMLTools.encodeToFile(patients,"./patient.xml");
-		else if (param == "rdv") 
+		if (!new File("rdv.xml").exists())
 	    	XMLTools.encodeToFile(l,"./rdv.xml");
-		else 
-			System.out.println("Error");
+
 
 
 

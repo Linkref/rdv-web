@@ -75,30 +75,7 @@
 
                     </div>
                     <!-- /.container-fluid -->
-                    
-		               <script type="text/javascript">
-		                  	 function RDVsupp(){
-		                	 	var date= $("#date").text();
-		                	 	var heure= $("#heure").text();
-		                	    var med=$("#med").text();
-		                	  
-						
-								
-								let form = document.createElement('form');
-								form.action = 'listerdv';
-								form.method = 'POST';
-
-								form.innerHTML = '<input name="date" value="'+date+'">';
-								form.innerHTML = '<input name="heure" value="'+heure+'">';
-								form.innerHTML = '<input name="med" value="'+med+'">';
-
-								// the form must be in the document to submit it
-								document.body.append(form);
-
-								form.submit();
-		                 	  }		 
-						   </script>
-						   
+		              
          <jsp:include page="footer.jsp">
                     <jsp:param name="" value=""/>
         

@@ -54,8 +54,20 @@ public class ListeRDV {
 		this.listeRDV.add(rdv);
 	}
 	
+	public void supprimer(String date, String heure, String medecin)
+	{
+		RendezVous rdvSup=new RendezVous(date,heure,medecin,null,null);
+		for(int i=0; i<this.listeRDV.size();i++)
+		{
+			if(listeRDV.get(i).equals(rdvSup))
+				this.listeRDV.remove(listeRDV.get(i));	
+		}
+		System.out.println("rdv supp");
+		
+	}
+	
 	public void afficher() {
-		 System.out.println("Boucle for");
+	// System.out.println("Boucle for");
 		  for(int i = 0 ; i < listeRDV.size(); i++)
 		   System.out.println(listeRDV.get(i));
 	}

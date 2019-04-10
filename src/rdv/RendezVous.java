@@ -6,11 +6,25 @@ import java.util.Date;
 
 public class RendezVous {
 
+
 	private String date;
     private String heureDebut;
     private String medecin;
     private String patient;
     private String raisonVenue; 
+    
+    public RendezVous(String date, String heureDebut, String medecin, String patient, String raisonVenue){
+        this.date = date;
+        this.heureDebut = heureDebut;
+        this.medecin = medecin;
+        this.patient = patient;
+        this.raisonVenue = raisonVenue;
+    }  
+    
+    public String toString() {
+    	return patient + " " + medecin + " " + date + " " + heureDebut + " " + raisonVenue;
+    
+    }
 
     public void setDate(String date) {
 		this.date = date;
@@ -57,18 +71,7 @@ public class RendezVous {
 		
     }
 
-    public RendezVous(String date, String heureDebut, String medecin, String patient, String raisonVenue){
-        this.date = date;
-        this.heureDebut = heureDebut;
-        this.medecin = medecin;
-        this.patient = patient;
-        this.raisonVenue = raisonVenue;
-    }  
-    
-    public String toString() {
-    	return patient + " " + medecin + " " + date + " " + heureDebut + " " + raisonVenue;
-    
-    }
+
     
     public boolean equals(Object o) {
     	if (o == null)

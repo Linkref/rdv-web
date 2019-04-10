@@ -1,4 +1,4 @@
-package priserdv;
+package rdv;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;

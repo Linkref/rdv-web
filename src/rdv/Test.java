@@ -7,7 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import priserdv.XMLTools;
+import rdv.XMLTools;
 
 public class Test {
 	

@@ -3,6 +3,7 @@
         </jsp:include>
         <%@ page pageEncoding="UTF-8" %>
                     
+    
                    
 
                         <!-- Area Chart -->
@@ -14,7 +15,8 @@
                                     <% if (request.getParameter("form") != null) {
                                     	out.println("<span class='badge badge-pill badge-success'>Rendez-vous ajouté avec succès</span>");
                                     }
-                                    %>
+                                    	
+                                    	%>
                                     
                                     </h6>
                                 </div>
@@ -25,8 +27,11 @@
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                 <thead>
                                                 <tr>
-                                                    <th>Patient</th>
+                                                    <th>Nom</th>
+                                                    <th>Prénom</th>
                                                     <th>Date de rendez-vous</th>
+                                                    <th>Heure de rendez-vous</th>
+                                                    <th>Spécialité</th>
                                                     <th>Médecin</th>
                                                     <th>Motif</th>
                                                     <th>Supprimer</th>
@@ -46,12 +51,16 @@
 														   out.println(
 																   "<tr>"
 														   			+"<td>"+rdv.getPatient()+"</td>"
-														   			+"<td>"+rdv.getDate()+ " à "+ rdv.getHeureDebut() +"</td>"
+														   			+"<td>"+rdv.getPatient()+"</td>"
+														   			+"<td id='date'>"+rdv.getDate()+"</td>"
+														   			+"<td id='heure'>"+rdv.getHeureDebut() +"</td>"
 														   		    +"<td>"+rdv.getMedecin()+"</td>"
+														   		    +"<td id='med'>"+rdv.getMedecin()+"</td>"
 														   		    +"<td>"+rdv.getRaisonVenue()+"</td>"
-																    +"<td><i class='fas fa-trash-alt'></i></td><tr>"
-																   
+																    +"<td><a href='listerdv?date="+rdv.getDate()+"&heure="+rdv.getHeureDebut()+"&med="+rdv.getMedecin().replace(" ", "_")+"'> <i class='fas fa-trash-alt'></i></button></td><tr>"
+																   	
 																   );
+														   	
 													   }
 												%>
                                                 
@@ -66,7 +75,30 @@
 
                     </div>
                     <!-- /.container-fluid -->
+                    
+		               <script type="text/javascript">
+		                  	 function RDVsupp(){
+		                	 	var date= $("#date").text();
+		                	 	var heure= $("#heure").text();
+		                	    var med=$("#med").text();
+		                	  
+						
+								
+								let form = document.createElement('form');
+								form.action = 'listerdv';
+								form.method = 'POST';
 
+								form.innerHTML = '<input name="date" value="'+date+'">';
+								form.innerHTML = '<input name="heure" value="'+heure+'">';
+								form.innerHTML = '<input name="med" value="'+med+'">';
+
+								// the form must be in the document to submit it
+								document.body.append(form);
+
+								form.submit();
+		                 	  }		 
+						   </script>
+						   
          <jsp:include page="footer.jsp">
                     <jsp:param name="" value=""/>
         

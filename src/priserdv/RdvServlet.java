@@ -16,7 +16,7 @@ import rdv.*;
 /**
  * Servlet implementation class RdvServlet
  */
-@WebServlet("/RdvServlet")
+@WebServlet()
 public class RdvServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,7 +35,7 @@ public class RdvServlet extends HttpServlet {
 
 		if (!new File("rdv.xml").exists()) {
 	    	ListeRDV l = new ListeRDV();
-	    	l.add(new RendezVous("15-03-19","15","Michel Cymes","Paul Jaquit","Pneumonie"));
+	    	//l.add(new RendezVous("15-03-19","15","Michel Cymes","Paul Jaquit","Pneumonie"));
 			XMLTools.encodeToFile(l,"./rdv.xml");
 		}
 	    	

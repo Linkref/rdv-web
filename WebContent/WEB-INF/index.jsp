@@ -73,26 +73,23 @@
                         <label class="col-md-12 control-label" for="dob">Heure</label>
                         <div class="col-md-8">
                             <select id="heure" name="heure" class="form-control">
-								<%														
-								for(int i = 9; i <= 19; i++) {
-									out.println("<option>"+ i +"H</option>");
-								}
-								%>
+
                             </select>                       
                          </div>
                       </div>
+                      
+                      <div class="form-group col-md-6" id ="horaires" style="display: none;">
+                        <label class="col-md-12 control-label" for="dob" id="horairesLabel"></label>
+                        <div class="col-md-12" id="badges">
+
+                         </div>
+                      </div>
+                      
+                      
 
 
                       </div>
                       
-                      
-                      <div>
-                      
-                      </div>
-                      
-                      
-                      
-
                       <!-- Button -->
                       <div class="form-group">
                         <div class="col-md-4">

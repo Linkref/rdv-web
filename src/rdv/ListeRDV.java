@@ -62,12 +62,10 @@ public class ListeRDV {
 			if(listeRDV.get(i).equals(rdvSup))
 				this.listeRDV.remove(listeRDV.get(i));	
 		}
-		System.out.println("rdv supp");
-		
+	
 	}
 	
 	public void afficher() {
-	// System.out.println("Boucle for");
 		  for(int i = 0 ; i < listeRDV.size(); i++)
 		   System.out.println(listeRDV.get(i));
 	}

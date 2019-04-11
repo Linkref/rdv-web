@@ -1,27 +1,31 @@
 package priserdv;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import rdv.XMLTools;
 import rdv.ListeRDV;
+import rdv.RendezVous;
+import rdv.XMLTools;
 
 /**
- * Servlet implementation class ListRdvServlet
+ * Servlet implementation class Horaires
  */
-@WebServlet()
-public class ListeRdvServlet extends HttpServlet {
+@WebServlet("/Horaires")
+public class HorairesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListeRdvServlet() {
-
+    public HorairesServlet() {
+        super();
     }
 
 	/**
@@ -29,24 +33,22 @@ public class ListeRdvServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml"); 
+		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");
+		List<String> horaires = new ArrayList<String>();
 		
-		if  (( request.getParameterMap().containsKey("med")) && (request.getParameterMap().containsKey("date")) && (request.getParameterMap().containsKey("heure"))){
-			String date =request.getParameter("date");
-			String heure =request.getParameter("heure");
-			String med =request.getParameter("med");
+		if  (( request.getParameterMap().containsKey("med")) && (request.getParameterMap().containsKey("date"))){
+			
+		String med =request.getParameter("med").replace("_", " ");
+		String date =request.getParameter("date");
+
+		for(RendezVous rdv : listeRdv.getListeRDV()) 
+			if ((rdv.getMedecin().equals(med)) && (rdv.getDate().equals(date) )) 
+				horaires.add(rdv.getHeureDebut());
+
+		}
 		
-			med= med.replace("_", " ");
-			
-			System.out.println(date+" "+heure+" "+med);
-			
-			listeRdv.supprimer(date, heure, med);
-			XMLTools.encodeToFile(listeRdv,"rdv.xml");
-			}
- 
-			
-			request.setAttribute( "listeRdv", listeRdv );
-			this.getServletContext().getRequestDispatcher( "/WEB-INF/tableau.jsp" ).forward( request, response );
+		request.setAttribute( "horaires", horaires );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/horaires.jsp" ).forward( request, response );
 	}
 
 	/**

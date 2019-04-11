@@ -9,17 +9,25 @@
     <servlet-name>RdvServlet</servlet-name>
     <servlet-class>priserdv.RdvServlet</servlet-class>
   </servlet>
-   <servlet>
+  <servlet>
     <servlet-name>ListeRdvServlet</servlet-name>
     <servlet-class>priserdv.ListeRdvServlet</servlet-class>
   </servlet>
+  <servlet>
+  <servlet-name>HorairesServlet</servlet-name>
+    <servlet-class>priserdv.HorairesServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>RdvServlet</servlet-name>
     <url-pattern>/index</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ListeRdvServlet</servlet-name>
     <url-pattern>/listerdv</url-pattern>
   </servlet-mapping>
-  
+    <servlet-mapping>
+    <servlet-name>HorairesServlet</servlet-name>
+    <url-pattern>/horaires</url-pattern>
+  </servlet-mapping>
 </web-app>

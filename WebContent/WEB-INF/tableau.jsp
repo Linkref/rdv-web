@@ -14,6 +14,8 @@
                                     <h6 class="m-0 font-weight-bold text-primary">LISTE DE RENDEZ-VOUS 
                                     <% if (request.getParameter("form") != null) {
                                     	out.println("<span class='badge badge-pill badge-success'>Rendez-vous ajouté avec succès</span>");
+                                    } else if (request.getParameter("date") != null) {
+                                    	out.println("<span class='badge badge-pill badge-success'>Rendez-vous supprimé avec succès</span>");
                                     }
                                     	
                                     	%>

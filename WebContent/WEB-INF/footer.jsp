@@ -31,7 +31,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
   $( function() {
-    $("#date").datepicker({ dateFormat: 'dd-mm-yy' });
+    $("#date").datepicker({ dateFormat: 'dd-mm-yy', beforeShowDay: $.datepicker.noWeekends, minDate: 0  });
   } );
   </script>
 

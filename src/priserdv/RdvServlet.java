@@ -1,8 +1,6 @@
 package priserdv;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +33,6 @@ public class RdvServlet extends HttpServlet {
 
 		if (!new File("rdv.xml").exists()) {
 	    	ListeRDV l = new ListeRDV();
-	    	//l.add(new RendezVous("15-03-19","15","Michel Cymes","Paul Jaquit","Pneumonie"));
 			XMLTools.encodeToFile(l,"./rdv.xml");
 		}
 	    	
@@ -65,7 +62,6 @@ public class RdvServlet extends HttpServlet {
         ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml"); 
         
         if (listeRdv.getListeRDV().contains(rdv)) {
-        	
         	response.sendRedirect("index?form=ko");
         	
         } else {        

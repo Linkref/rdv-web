@@ -3,17 +3,14 @@
         </jsp:include>
         <%@ page pageEncoding="UTF-8" %>
 
-            <!-- Area Chart -->
             <div class="col-xl-12">
               <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">PRISE DE RENDEZ-VOUS  <% if (request.getParameter("form") != null) {
                                     	out.println("<span class='badge badge-pill badge-danger'>Médecin non disponible durant ce chréno</span>");
                                     }
                                     %></h6>
                 </div>
-                <!-- Card Body -->
                 <div class="card-body">
                   <form class="form-horizontal" action="index" method="post" id="formRdv">
                     <fieldset>
@@ -34,7 +31,7 @@
                           </div>
                         </div>
                         
-                        <!-- Text input-->
+                        
                         <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="RaisonRdv">Raison de la venue</label>
                         <div class="col-md-8">
@@ -42,7 +39,7 @@
                         </div>
                       </div>
 
-                        <!-- Text input-->
+                        
                         <div class="form-group col-md-6">
                           <label class="col-md-12 control-label" for="patient">Nom</label>
                           <div class="col-md-8">
@@ -50,7 +47,7 @@
                           </div>
                         </div>
                         
-                        <!-- Text input-->
+                       
                         <div class="form-group col-md-6">
                           <label class="col-md-12 control-label" for="patient">Prénom</label>
                           <div class="col-md-8">
@@ -59,7 +56,7 @@
                         </div>
 
   						 
-                      <!-- Text input-->
+                     
                      <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="date">Date</label>
                         <div class="col-md-8">
@@ -68,7 +65,7 @@
                       </div>
                     
 
-                      <!-- Text input-->
+                     
                       <div class="form-group col-md-6">
                         <label class="col-md-12 control-label" for="dob">Heure</label>
                         <div class="col-md-8">
@@ -90,7 +87,7 @@
 
                       </div>
                       
-                      <!-- Button -->
+                      
                       <div class="form-group">
                         <div class="col-md-4">
                           <button id="envoyer" name="envoyer" class="btn btn-primary">Reserver</button>
@@ -106,11 +103,9 @@
 
 
         </div>
-        <!-- /.container-fluid -->
+
         
-         
-        
+            
         <jsp:include page="footer.jsp">
-                    <jsp:param name="" value=""/>
-        
+             <jsp:param name="" value=""/>  
         </jsp:include>

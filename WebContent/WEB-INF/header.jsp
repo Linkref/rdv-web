@@ -6,15 +6,10 @@
 
 <head>
 
+  <title>Cabinet Médical - Prise de rendez-vous</title>
 
-  <title>Cabinet Médical - DashBoard</title>
-
-  <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-  <!-- Custom styles for this template-->
+  <link href="css/jquery.ui.css" rel="stylesheet" >
   <link href="css/sb-admin-2.css" rel="stylesheet">
 
 </head>
@@ -32,7 +27,6 @@
 
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="index">
           <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -46,35 +40,31 @@
       </li>
 
     </ul>
-    <!-- End of Sidebar -->
 
-    <!-- Content Wrapper -->
+
     <div id="content-wrapper" class="d-flex flex-column">
 
       <div id="content">
 
-        <!-- Topbar -->
+        
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/index" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cabinet Médical</span>
-                <img class="img-profile rounded-circle" src="http://pngimg.com/uploads/doctor/doctor_PNG16007.png">
               </a>
             </li>
           </ul>
         </nav>
-        <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
         <div class="container-fluid">
 
 
-          <!-- Content Row -->
+          
           <div class="row">
 
-            <!-- Earnings (Monthly) Card Example -->
+           
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -93,7 +83,7 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+           
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -110,7 +100,6 @@
               </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
@@ -129,8 +118,5 @@
                 </div>
               </div>
             </div>
-
-
-          <!-- Content Row -->
 
           <div class="row">

@@ -1,4 +1,0 @@
-git pull // pour récuperer les derniere modifs
-git add . // ajouter les modifs
-git commit -m "message" // donner un nom 
-git push //  

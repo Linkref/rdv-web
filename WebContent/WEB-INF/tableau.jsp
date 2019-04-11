@@ -28,8 +28,7 @@
                                                     <th>Nom</th>
                                                     <th>Prénom</th>
                                                     <th>Date de rendez-vous</th>
-                                                    <th>Heure de rendez-vous</th>
-                                                    <th>Spécialité</th>
+                                                    <th>Heure de rendez-vous</th>                                                  
                                                     <th>Médecin</th>
                                                     <th>Motif</th>
                                                     <th>Supprimer</th>
@@ -48,12 +47,11 @@
 													   {
 														   out.println(
 																   "<tr>"
-														   			+"<td>"+rdv.getPatient()+"</td>"
-														   			+"<td>"+rdv.getPatient()+"</td>"
+														   			+"<td>"+rdv.getPatient().split(" ")[0]+"</td>"
+														   			+"<td>"+rdv.getPatient().split(" ")[1]+"</td>"
 														   			+"<td id='date'>"+rdv.getDate()+"</td>"
 														   			+"<td id='heure'>"+rdv.getHeureDebut() +"</td>"
 														   		    +"<td>"+rdv.getMedecin()+"</td>"
-														   		    +"<td id='med'>"+rdv.getMedecin()+"</td>"
 														   		    +"<td>"+rdv.getRaisonVenue()+"</td>"
 																    +"<td><a href='listerdv?date="+rdv.getDate()+"&heure="+rdv.getHeureDebut()+"&med="+rdv.getMedecin().replace(" ", "_")+"'> <i class='fas fa-trash-alt'></i></button></td><tr>"
 																   	

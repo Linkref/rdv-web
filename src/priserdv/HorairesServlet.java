@@ -33,18 +33,22 @@ public class HorairesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml");
-		List<String> horaires = new ArrayList<String>();
+		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml"); // Récupère la liste des rendez-vous
+		List<String> horaires = new ArrayList<String>(); 
 		
+		// Vérifie si les paramètres sont bien présent dans l'URL
 		if  (( request.getParameterMap().containsKey("med")) && (request.getParameterMap().containsKey("date"))){
 			
-		String med =request.getParameter("med").replace("_", " ");
-		String date =request.getParameter("date");
-
-		for(RendezVous rdv : listeRdv.getListeRDV()) 
-			if ((rdv.getMedecin().equals(med)) && (rdv.getDate().equals(date) )) 
-				horaires.add(rdv.getHeureDebut());
-
+			// Récupère les paramètres depuis l'URL
+			String med =request.getParameter("med").replace("_", " "); 
+			String date =request.getParameter("date");
+	
+			// Parcours de la liste des rendez-vous
+			// Test si un rendez-vous existe pour un médecin donné à une date donnée
+			for(RendezVous rdv : listeRdv.getListeRDV()) 
+				if ((rdv.getMedecin().equals(med)) && (rdv.getDate().equals(date) )) 
+					horaires.add(rdv.getHeureDebut());
+	
 		}
 		
 		request.setAttribute( "horaires", horaires );

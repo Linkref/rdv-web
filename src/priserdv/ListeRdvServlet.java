@@ -29,24 +29,24 @@ public class ListeRdvServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml"); 
+		ListeRDV listeRdv= (ListeRDV) XMLTools.decodeToObject("rdv.xml"); // Récupère la liste des RDV
 		
+		// Vérifie si les paramètres sont bien dans l'URL
+		// Si il existe des paramètre c'est pour lancer la suppréssion d'un RDV
 		if  (( request.getParameterMap().containsKey("med")) && (request.getParameterMap().containsKey("date")) && (request.getParameterMap().containsKey("heure"))){
+			
+			// Récupération des paramètres depuis l'URL
 			String date =request.getParameter("date");
 			String heure =request.getParameter("heure");
-			String med =request.getParameter("med");
+			String med =request.getParameter("med").replace("_", " ");
 		
-			med= med.replace("_", " ");
-			
-			System.out.println(date+" "+heure+" "+med);
-			
-			listeRdv.supprimer(date, heure, med);
-			XMLTools.encodeToFile(listeRdv,"rdv.xml");
-			}
+			listeRdv.supprimer(date, heure, med); // Suppréssion du RDV de la liste
+			XMLTools.encodeToFile(listeRdv,"rdv.xml"); // Enregistrement du fichier mis à jour
+		}
  
 			
-			request.setAttribute( "listeRdv", listeRdv );
-			this.getServletContext().getRequestDispatcher( "/WEB-INF/tableau.jsp" ).forward( request, response );
+		request.setAttribute( "listeRdv", listeRdv );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/tableau.jsp" ).forward( request, response );
 	}
 
 	/**

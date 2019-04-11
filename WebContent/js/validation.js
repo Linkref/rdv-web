@@ -5,7 +5,7 @@ function validationDate(date) {
 
 function afficherBadges(horaires) {
 	for (var i = 9; i <= 19; i++) {
-		if (horaires.indexOf(i+"H") == -1)
+		if (horaires.indexOf(i+"h") == -1)
 			$('#heure').html($('#heure').html()+"<option> "+i+"h</option> ");
 		else
 			$('#heure').html($('#heure').html()+"<option disabled>"+i+"h (Chréno déjà réservé)</option> ");
@@ -30,6 +30,7 @@ function afficherHoraires() {
 	        		horraires.push(tab[i].childNodes[0].nodeValue);
 	        	}
 
+	        	console.log(horraires);
 	        	afficherBadges(horraires);
 
 	        },

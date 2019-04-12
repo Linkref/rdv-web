@@ -21,7 +21,7 @@ function afficherHoraires() {
 		
 		$.ajax({
 	        type: "get",
-	        url: "/Projet-PriseRDV/horaires?med="+$('#selectMed').val().replace(' ', '_')+"&date="+$('#date').val(),
+	        url: "horaires?med="+$('#selectMed').val().replace(' ', '_')+"&date="+$('#date').val(),
 	        dataType: "xml",
 	        success: function(data) {
 	        	var tab = data.getElementsByTagName("heure");

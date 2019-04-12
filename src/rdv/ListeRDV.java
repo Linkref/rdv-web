@@ -1,4 +1,5 @@
 package rdv;
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,7 +11,7 @@ import java.util.Date;
  * Objet qui définit une liste de rendez-vous
  */
 
-public class ListeRDV {
+public class ListeRDV implements Serializable{
 	
 	/**
 	 * Liste des rendez-vous

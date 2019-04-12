@@ -1,10 +1,12 @@
 package rdv;
 
+import java.io.Serializable;
+
 /**
  * Objet qui définit un rendez-vous
  */
 
-public class RendezVous {
+public class RendezVous implements Serializable{
 
 	/**
 	 * Date du rendez-vous
@@ -50,7 +52,7 @@ public class RendezVous {
     }
 	
 	/**
-	 * Vérifie si deux rdv sont à la même heure à la même date
+	 * Vérifie si deux rdv sont à la même heure à la même date pour un même médecin
 	 * @return boolean
 	 */
     public boolean equals(Object o) {

@@ -72,7 +72,7 @@
 
 
                     
-                   
+                 </div>  
 		              
          <jsp:include page="footer.jsp">
                     <jsp:param name="" value=""/>

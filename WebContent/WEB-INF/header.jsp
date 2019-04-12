@@ -30,7 +30,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Prendez un rendez-vous</span></a>
+          <span>Prende un rendez-vous</span></a>
       </li>
 
       <li class="nav-item active">

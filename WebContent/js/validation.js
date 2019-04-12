@@ -8,7 +8,7 @@ function afficherBadges(horaires) {
 		if (horaires.indexOf(i+"h") == -1)
 			$('#heure').html($('#heure').html()+"<option> "+i+"h</option> ");
 		else
-			$('#heure').html($('#heure').html()+"<option disabled>"+i+"h (Chréno déjà réservé)</option> ");
+			$('#heure').html($('#heure').html()+"<option disabled>"+i+"h (Créneau  déjà réservé)</option> ");
 	}
 }
 

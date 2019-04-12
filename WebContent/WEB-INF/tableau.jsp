@@ -45,10 +45,11 @@
 																							
 													   for(RendezVous rdv : listeRdv.getListeRDV())
 													   {
+														   
 														   out.println(
 																   "<tr>"
-														   			+"<td>"+rdv.getPatient().split(" ")[0]+"</td>"
-														   			+"<td>"+rdv.getPatient().split(" ")[1]+"</td>"
+														   			+"<td>"+rdv.getPatient().split(" ")[0].replace("_", " ")+"</td>"
+														   			+"<td>"+rdv.getPatient().split(" ")[1].replace("_", " ")+"</td>"
 														   			+"<td id='date'>"+rdv.getDate()+"</td>"
 														   			+"<td id='heure'>"+rdv.getHeureDebut() +"</td>"
 														   		    +"<td>"+rdv.getMedecin()+"</td>"

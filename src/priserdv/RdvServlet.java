@@ -54,6 +54,14 @@ public class RdvServlet extends HttpServlet {
         String raison = request.getParameter( "raisonrdv" );
         String date = request.getParameter( "date" );
         String heure = request.getParameter( "heure" );
+        
+     
+        patientNom=patientNom.replace(" ","_");       
+        patientPrenom=patientPrenom.replace(" ", "_");
+        
+        patientPrenom=patientPrenom.replace("<", "");
+        patientNom=patientNom.replace("<","");
+        raison=raison.replace("<", "");
             
         RendezVous rdv = new RendezVous(date,heure,medecin,patientNom+" "+patientPrenom,raison);
 

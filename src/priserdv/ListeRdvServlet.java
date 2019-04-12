@@ -25,6 +25,7 @@ public class ListeRdvServlet extends HttpServlet {
     }
 
 	/**
+	 * Charge tableau.jsp avec la liste des rendez-vous en paramètre
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

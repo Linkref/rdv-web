@@ -12,7 +12,9 @@ import java.util.Date;
 
 public class ListeRDV {
 	
-	
+	/**
+	 * Liste des rendez-vous
+	 */
 	private ArrayList<RendezVous> listeRDV;
 
 	
@@ -28,7 +30,6 @@ public class ListeRDV {
 	/**
 	 * Ajoute un rendez-vous à la liste
 	 * @param rdv: rendez-vous
-	 * @return liste de rendez-vous
 	 */
 	public void add(RendezVous rdv)
 	{
@@ -38,7 +39,6 @@ public class ListeRDV {
 	/**
 	 * Supprime un rendez-vous de la liste
 	 * @param date heure medecin
-	 * @return rdv: liste de rendez-vous
 	 */
 	public void supprimer(String date, String heure, String medecin)
 	{
@@ -52,7 +52,7 @@ public class ListeRDV {
 		
 	/**
 	 * Compte le nombre de rendez-vous selon la date du jour
-	 * @param passe ajd futur
+	 * @param param: passe ajd futur
 	 * @return nombre de rdv
 	 */
 	public int compterRdv(String param) throws ParseException {
@@ -92,10 +92,19 @@ public class ListeRDV {
     //
     // GETTERS & SETTERS
     //
+	
+	/**
+	 * Retourne la liste des rendez-vous
+	 * @return La liste des rendez-vous
+	 */
 	public ArrayList<RendezVous> getListeRDV() {
 		return listeRDV;
 	}
 
+	/**
+	 * Modifie la liste de rendez-vous
+	 * @param listeRDV : la liste de rendez-vous
+	 */
 	public void setListeRDV(ArrayList<RendezVous> listeRDV) {
 		this.listeRDV = listeRDV;
 	}

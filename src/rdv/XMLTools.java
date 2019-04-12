@@ -14,8 +14,10 @@ public final class XMLTools {
     /**
      * Serialisation d'un objet dans un fichier
      * @param object objet a serialiser
-     * @param filename chemin du fichier
-     */
+     * @param fileName chemin du fichier
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
     public static void encodeToFile(Object object, String fileName) throws FileNotFoundException, IOException {
         // ouverture de l'encodeur vers le fichier
         XMLEncoder encoder = new XMLEncoder(new FileOutputStream(fileName));
@@ -30,7 +32,15 @@ public final class XMLTools {
         }
     }
     
-    public static Object decodeToObject(String fileName) throws FileNotFoundException, IOException {
+		/**
+		 * 
+		 * Deserialisation d'un objet dans un fichier
+		 * @param fileName chemin du fichier
+		 * @return un objet désérialisé
+		 * @throws FileNotFoundException
+		 * @throws IOException
+		 */
+	    public static Object decodeToObject(String fileName) throws FileNotFoundException, IOException {
         // ouverture de l'encodeur vers le fichier
     	XMLDecoder decoder = new XMLDecoder(new FileInputStream(fileName));
     	 Object	object = null;

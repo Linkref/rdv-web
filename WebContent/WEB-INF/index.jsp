@@ -24,7 +24,7 @@
                             <select id="selectMed" name="selectMed" class="form-control">
   								<option>Michel Cymes</option>
 								<option>Marco Polo</option>
-								<option>François Dupont</option>
+								<option>Martin Dupont</option>
 								<option>Albert Tuile</option>
 								<option>Serge Loupon</option>
                             </select>

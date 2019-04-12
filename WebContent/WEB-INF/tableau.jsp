@@ -8,6 +8,7 @@
                                 
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">LISTE DE RENDEZ-VOUS 
+                                    <!-- Affiche les messages de succés -->
                                     <% if (request.getParameter("form") != null) {
                                     	out.println("<span class='badge badge-pill badge-success'>Rendez-vous ajouté avec succès</span>");
                                     } else if (request.getParameter("date") != null) {
@@ -36,7 +37,7 @@
                                                 </thead>
 
                                                 <tbody>
-                                                
+                                                <!-- On remplit le tableau avec les rendez-vous -->
 												<jsp:useBean id="listeRdv"  scope="request" class="rdv.ListeRDV"/>
 												<%@ page import="java.util.ArrayList"
 														import="rdv.RendezVous"  
@@ -70,7 +71,7 @@
                         </div>
 
 
-                    </div>
+                    
                    
 		              
          <jsp:include page="footer.jsp">

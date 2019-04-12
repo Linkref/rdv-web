@@ -6,10 +6,29 @@ package rdv;
 
 public class RendezVous {
 
+	/**
+	 * Date du rendez-vous
+	 */
 	private String date;
+	
+	/**
+	 * Heure du rendez-vous
+	 */
     private String heureDebut;
+    
+	/**
+	 * Medecin du rendez-vous
+	 */
     private String medecin;
+    
+	/**
+	 * Patient du rendez-vous
+	 */
     private String patient;
+    
+	/**
+	 * Raison du rendez-vous
+	 */
     private String raisonVenue; 
     
     /**
@@ -49,44 +68,83 @@ public class RendezVous {
     // GETTERS & SETTERS
     //
     
+	/**
+	 * Retourne la date du rendez-vous
+	 * @return La date du rendez-vous
+	 */
 	public String getDate() {
 		return date;
 	}
-
+	
+	/**
+	 * Retourne l'heure du rendez-vous
+	 * @return  l'heure du rendez-vous
+	 */
 	public String getHeureDebut() {
 		return heureDebut;
 	}
 
-	
+	/**
+	 * Retourne le medecin du rendez-vous
+	 * @return le medecin du rendez-vous
+	 */
 	public String getMedecin() {
 		return medecin;
 	}
 
+	/**
+	 * Retourne le patient du rendez-vous
+	 * @return le patient du rendez-vous
+	 */
 	public String getPatient() {
 		return patient;
 	}
 
+	/**
+	 * Retourne la raison du rendez-vous
+	 * @return La raison du rendez-vous
+	 */
 	public String getRaisonVenue() {
 		return raisonVenue;
 	}
     
 
+	/**
+	 * Modifie la date du rendez-vous 
+	 * @param date : la date
+	 */
     public void setDate(String date) {
 		this.date = date;
 	}
 
+	/**
+	 * Modifie l'heure du rendez-vous 
+	 * @param heureDebut : l'heure du rdv
+	 */
 	public void setHeureDebut(String heureDebut) {
 		this.heureDebut = heureDebut;
 	}
 
+	/**
+	 * Modifie le medecin du rendez-vous 
+	 * @param medecin
+	 */
 	public void setMedecin(String medecin) {
 		this.medecin = medecin;
 	}
 
+	/**
+	 * Modifie le patient du rendez-vous 
+	 * @param patient
+	 */
 	public void setPatient(String patient) {
 		this.patient = patient;
 	}
 
+	/**
+	 * Modifie la raison du rendez-vous 
+	 * @param raisonVenue
+	 */
 	public void setRaisonVenue(String raisonVenue) {
 		this.raisonVenue = raisonVenue;
 	}

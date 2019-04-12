@@ -29,6 +29,7 @@ public class HorairesServlet extends HttpServlet {
     }
 
 	/**
+	 * Charge horaires.jsp avec les horaires des rendez-vous d'un medecin
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
